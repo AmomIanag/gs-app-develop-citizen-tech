@@ -16,6 +16,7 @@ const cliente = new MongoClient(uriMongoDB, {
 });
 
 app.use(express.json());
+app.use(express.static("public"));
 
 // Categorias e prioridades permitidas
 const categoriasValidas = [

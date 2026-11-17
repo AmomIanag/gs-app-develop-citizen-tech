@@ -1,0 +1,178 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>CitizenTech | Ocorrências Urbanas</title>
+
+  <link rel="stylesheet" href="/style.css" />
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <header class="cabecalho">
+    <div class="container cabecalho-conteudo">
+      <a href="/" class="marca">
+        <span class="marca-icone">CT</span>
+        <span>Citizen<span class="destaque">Tech</span></span>
+      </a>
+
+      <span class="selo-ods">
+        ODS 11 · Cidades e comunidades sustentáveis
+      </span>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="apresentacao">
+      <span class="etiqueta">CIDADANIA E TECNOLOGIA</span>
+
+      <h1>Uma cidade melhor começa com você.</h1>
+
+      <p>
+        Registre problemas de infraestrutura urbana e acompanhe
+        as ocorrências da comunidade. Informação e tecnologia
+        a serviço de cidades mais sustentáveis.
+      </p>
+    </section>
+
+    <div class="layout-principal">
+
+      <!-- Formulário -->
+      <section class="painel painel-formulario">
+        <div class="painel-cabecalho">
+          <h2>Nova ocorrência</h2>
+          <p>Informe o problema identificado na sua região.</p>
+        </div>
+
+        <form id="form-ocorrencia">
+          <div class="campo">
+            <label for="categoria">Categoria</label>
+
+            <select id="categoria" name="categoria" required>
+              <option value="">Selecione uma categoria</option>
+              <option value="Buraco na via">Buraco na via</option>
+              <option value="Iluminação pública">
+                Iluminação pública
+              </option>
+              <option value="Descarte irregular de resíduos">
+                Descarte irregular de resíduos
+              </option>
+              <option value="Acessibilidade">Acessibilidade</option>
+            </select>
+          </div>
+
+          <div class="campo">
+            <label for="localizacao">Localização</label>
+
+            <input
+              type="text"
+              id="localizacao"
+              name="localizacao"
+              placeholder="Ex.: Rua das Flores, 120"
+              maxlength="150"
+              required
+            />
+          </div>
+
+          <div class="campo">
+            <label for="descricao">Descrição</label>
+
+            <textarea
+              id="descricao"
+              name="descricao"
+              placeholder="Descreva o problema encontrado..."
+              maxlength="500"
+              rows="4"
+              required
+            ></textarea>
+          </div>
+
+          <div class="campo">
+            <label for="prioridade">Prioridade</label>
+
+            <select id="prioridade" name="prioridade" required>
+              <option value="">Selecione a prioridade</option>
+              <option value="Baixa">Baixa</option>
+              <option value="Média">Média</option>
+              <option value="Alta">Alta</option>
+            </select>
+          </div>
+
+          <button
+            type="submit"
+            id="botao-cadastrar"
+            class="botao botao-primario"
+          >
+            Cadastrar ocorrência
+          </button>
+
+          <p
+            id="mensagem"
+            class="mensagem"
+            role="status"
+            aria-live="polite"
+            hidden
+          ></p>
+        </form>
+      </section>
+
+      <!-- Consulta e indicadores -->
+      <section class="area-consulta">
+        <div class="secao-titulo">
+          <div>
+            <h2>Painel de ocorrências</h2>
+            <p>Visão geral dos registros da comunidade.</p>
+          </div>
+
+          <button
+            type="button"
+            id="botao-atualizar"
+            class="botao botao-secundario"
+          >
+            Atualizar
+          </button>
+        </div>
+
+        <div class="indicadores">
+          <article class="indicador">
+            <span>Total de ocorrências</span>
+            <strong id="total-ocorrencias">0</strong>
+            <small>Registros cadastrados</small>
+          </article>
+
+          <article class="indicador">
+            <span>Alta prioridade</span>
+            <strong id="total-alta">0</strong>
+            <small>Registros prioritários</small>
+          </article>
+        </div>
+
+        <div class="painel painel-resumo">
+          <h3>Ocorrências por categoria</h3>
+          <div id="resumo-categorias" class="resumo-categorias">
+            <p class="estado">Carregando indicadores...</p>
+          </div>
+        </div>
+
+        <div class="painel painel-listagem">
+          <h3>Registros recentes</h3>
+
+          <div
+            id="lista-ocorrencias"
+            class="lista-ocorrencias"
+            aria-live="polite"
+          >
+            <p class="estado">Carregando ocorrências...</p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="rodape">
+    CitizenTech · Global Solution 2026.2 · FIAP
+  </footer>
+</body>
+</html>
