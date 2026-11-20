@@ -119,7 +119,7 @@ A data do cadastro é gerada automaticamente pelo servidor.
 
 ## 9. Vídeo pitch
 
-Link da apresentação: [INSERIR LINK DO VÍDEO]
+Link da apresentação: [https://youtu.be/QUoAUGBewjw]
 
 ## 10. Considerações finais
 
